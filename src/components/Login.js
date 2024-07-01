@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "../style/login.css";
-import { Context } from "../context/UserContext";
 import {  Link } from "react-router-dom";
 import firebaseInstance from "../firebase/firebase";
 import googleImg from "../images/google.png";
@@ -10,6 +9,7 @@ function Login() {
     email: "",
     password: ""
   });
+  const [error, setError] = useState(null);
 
   const handleGoogleSignIn = () => {
     firebaseInstance.signInWithGoogle().then((result) => {
@@ -21,6 +21,7 @@ function Login() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setError(null);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value
@@ -30,11 +31,10 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    console.log(formData);
-    // Example: setUser({ email: formData.email });
+    firebaseInstance.signIn( formData.email, formData.password ).catch((err)=>{
+        setError("Invalid Email ID or Password !");
+    })
   };
-
-  const { setUser } = useContext(Context);
 
   return (
     <div className="login-container">
@@ -73,6 +73,7 @@ function Login() {
               Forgot Password?
             </a>
           </div>
+          {error && <div className="error-message">{error}</div>}
           <button type="submit" className="sign-in-btn">
             SIGN IN
           </button>
