@@ -10,7 +10,7 @@ function Home() {
   console.log(user)
   return (
   <>
-    <Header/>
+    <Header />
     <div className='centered-container'>Welcome,{user.displayName} 👀!!
         <br/>
         <button onClick={()=>firebaseInstance.auth.signOut()}>Logout</button>

@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import { useState,useEffect } from 'react';
 import firebaseInstance from './firebase/firebase';
 import './App.css';
+import { CartProvider } from './context/CartContex';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <>
+    <CartProvider>
     <UserContext>
     <Router>
       <Routes>
@@ -50,6 +52,7 @@ function App() {
       </Routes>
     </Router>
     </UserContext>
+    </CartProvider>
     </>
   );
 }

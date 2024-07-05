@@ -37,6 +37,7 @@ function Login() {
   };
 
   return (
+    <div className="container">
     <div className="login-container">
       <div className="login-box">
         <div className="logo">
@@ -87,6 +88,7 @@ function Login() {
           <Link to="/signup">Sign Up</Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }
