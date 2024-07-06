@@ -48,8 +48,8 @@
 
 @media (max-width: 768px) {
     .product-card {
-        flex: 1 1 45%; /* Adjust the flex-basis for smaller screens */
-        max-width: 45%;
+        flex: 1 1 49%; /* Adjust the flex-basis for smaller screens */
+        max-width: 49%;
     }
 }
 

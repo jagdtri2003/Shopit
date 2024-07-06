@@ -9,14 +9,14 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo">Shopit</div>
+      <Link to='/' className="logo">Shopit</Link>
       <input type="text" className="search-bar" placeholder="Search for products..." />
       <span className='search-logo' ><i class="fa-solid fa-magnifying-glass"></i></span> 
       <nav className="navigation">
         <Link className='navigation-item' to="/account"><i title='Account' class="fa-duotone fa-user"></i></Link>
         <Link className='navigation-item' to="/cart">
         <div className="cart-container">
-            <i title="Your Cart" class="fa-duotone fa-cart-shopping cart-icon"></i>
+            <i title="Your Cart" className="fa-duotone fa-cart-shopping cart-icon"></i>
             <div className="cart-count" id="cart-count">{cart || 0}</div>
         </div>
           

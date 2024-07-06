@@ -7,6 +7,7 @@ import { useState,useEffect } from 'react';
 import firebaseInstance from './firebase/firebase';
 import './App.css';
 import { CartProvider } from './context/CartContex';
+import UserProfile from './components/UserProfile';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Route path='/about' element={<h1>About</h1>}></Route>
         <Route path='/login' element={!user ?<Login/>:<Navigate to='/'/>}></Route>
         <Route path='/signup' element={!user ? <Signup/> : <Navigate to='/'/>}></Route>
+        <Route path='/account' element={!user ? <Signup/> : <UserProfile user={user}/>}></Route>
       </Routes>
     </Router>
     </UserContext>

@@ -11,8 +11,10 @@
   }
   
   .logo {
+    color: #000;
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
   }
   
   .search-bar {
