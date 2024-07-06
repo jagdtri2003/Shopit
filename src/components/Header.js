@@ -13,7 +13,7 @@ function Header() {
       <input type="text" className="search-bar" placeholder="Search for products..." />
       <span className='search-logo' ><i class="fa-solid fa-magnifying-glass"></i></span> 
       <nav className="navigation">
-        <Link className='navigation-item' to="/account">Account</Link>
+        <Link className='navigation-item' to="/account"><i title='Account' class="fa-duotone fa-user"></i></Link>
         <Link className='navigation-item' to="/cart">
         <div className="cart-container">
             <i title="Your Cart" class="fa-duotone fa-cart-shopping cart-icon"></i>
