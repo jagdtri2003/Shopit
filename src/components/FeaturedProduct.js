@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/featuredproduct.css';
+import {Link} from 'react-router-dom';
 
 function FeaturedProducts() {
     const createDiscount = () =>{
@@ -11,6 +12,7 @@ function FeaturedProducts() {
         'https://via.placeholder.com/300x200.png?text=Slide+2',
         'https://via.placeholder.com/300x200.png?text=Slide+3',
         'https://via.placeholder.com/300x200.png?text=Slide+4',
+        'https://via.placeholder.com/300x200.png?text=Slide+5',
     ]
   return (
     <section className="featured-products">
@@ -21,10 +23,10 @@ function FeaturedProducts() {
       </div>
       <div className="product-carousel">
         {featuredList.map((item, index) => (
-            <div className="product-card" key={index}>
+            <Link to={`/item/${index}`} className="product-card" key={index}>
                 <img loading='lazy' src={item} alt="product" />
                 <div className='discount'> <span className='discount-per'>{createDiscount()}% off</span> Limited time deal</div>
-            </div>
+            </Link>
         ))}
       </div>
     </section>

@@ -18,11 +18,18 @@
 
 
 .product-carousel{
+    margin: auto 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.product-carousel :last-child{
+    justify-content: flex-start;
+}
+
 .product-card{
+    text-decoration: none;
     margin: 2px;
     border-radius: 10px;
     flex: 1 1 32%; /* Flex-grow, flex-shrink, flex-basis */
@@ -61,6 +68,7 @@
     padding: 3% 5%;
     border-radius: 3px;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

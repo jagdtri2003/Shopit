@@ -8,6 +8,7 @@ import firebaseInstance from './firebase/firebase';
 import './App.css';
 import { CartProvider } from './context/CartContex';
 import UserProfile from './components/UserProfile';
+import ItemComponent from './components/ItemComponent';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         <Route path='/login' element={!user ?<Login/>:<Navigate to='/'/>}></Route>
         <Route path='/signup' element={!user ? <Signup/> : <Navigate to='/'/>}></Route>
         <Route path='/account' element={!user ? <Signup/> : <UserProfile user={user}/>}></Route>
+        <Route path="/item/:id" element={<ItemComponent/>} />
       </Routes>
     </Router>
     </UserContext>
