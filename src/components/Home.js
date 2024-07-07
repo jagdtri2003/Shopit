@@ -4,6 +4,7 @@ import Header from './Header';
 // import { CartContext } from '../context/CartContex';
 import ImageSlider from './ImageSlider';
 import FeaturedProducts from './FeaturedProduct';
+import Categories from './Categories';
 
 
 function Home() {
@@ -21,6 +22,7 @@ function Home() {
     <Header />
     <ImageSlider images={images} />
     <FeaturedProducts/>
+    <Categories/>
     </>
   )
 }

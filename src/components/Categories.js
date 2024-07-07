@@ -1,21 +1,21 @@
 import React from 'react';
 import '../style/featuredproduct.css';
 
-function FeaturedProducts() {
-    const createDiscount = () =>{
-      const discount = Math.round(Math.random() * 100);
-      return discount>60 ? discount-50 : discount+1;
-    }
+
+function Categories() {
     const featuredList = [
         'https://via.placeholder.com/300x200.png?text=Slide+1',
         'https://via.placeholder.com/300x200.png?text=Slide+2',
         'https://via.placeholder.com/300x200.png?text=Slide+3',
         'https://via.placeholder.com/300x200.png?text=Slide+4',
+        'https://via.placeholder.com/300x200.png?text=Slide+5',
+        'https://via.placeholder.com/300x200.png?text=Slide+6'
     ]
   return (
+    <>
     <section className="featured-products">
     <div className='heading-container'>
-      <h2 className="heading">Featured Products
+      <h2 className="heading">Categories
       </h2>
       <hr className='horizontal-rule'/>
       </div>
@@ -23,12 +23,15 @@ function FeaturedProducts() {
         {featuredList.map((item, index) => (
             <div className="product-card" key={index}>
                 <img loading='lazy' src={item} alt="product" />
-                <div className='discount'> <span className='discount-per'>{createDiscount()}% off</span> Limited time deal</div>
+                <h4 className='cat-name'>Category {index+1}</h4>
+                <div>Constructed from luxury nylons, leathers, and custom hardware, featuring sport details such as hidden breathing vents, waterproof + antimicrobial linings, and more.</div>
+                <button className='shop-now'>SHOP NOW </button>
             </div>
         ))}
       </div>
     </section>
-  );
+    </>
+  )
 }
 
-export default FeaturedProducts;
+export default Categories
