@@ -22,13 +22,13 @@ const CartItem = ({ item, onRemove }) => (
             </button>
           </td>
           <td data-quantity={item.quantity}>
-            <p> ${item.price}</p>
+            <p> ₹ {item.price}</p>
           </td>
           <td>
             <p>{item.quantity}</p>
           </td>
           <td>
-            <p>${(item.price * item.quantity).toFixed(2)}</p>
+            <p>₹ {(item.price * item.quantity).toFixed(2)}</p>
           </td>
         </tr>
       </tbody>
@@ -107,9 +107,9 @@ const Cart = () => {
         </div>
         <div className="order-summary">
           <h2>Order summary</h2>
-          <p>Sub total: ${totalAmount.toFixed(2)}</p>
-          <p>Total: ${totalAmount.toFixed(2)}</p>
-          <p>(Inclusive of tax $0.00)</p>
+          <p>Sub total: ₹ {totalAmount.toFixed(2)}</p>
+          <p>Total: ₹ {totalAmount.toFixed(2)}</p>
+          <p>(Inclusive of tax ₹ 0.00)</p>
           <button className="checkout-button">CHECKOUT</button>
         </div>
         <div className="promo-code">
