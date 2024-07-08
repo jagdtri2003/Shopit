@@ -1,11 +1,13 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import '../style/itemcomponent.css';
 import { useParams } from 'react-router-dom';
 import Header from './Header';
+import { CartContext } from '../context/CartContex';
 
 const ItemComponent = () => {
     const { id } = useParams();
     const [count, setCount] = useState(1);
+    const {cartItems,addToCart} = useContext(CartContext);
     const item = {
         image:'https://via.placeholder.com/1000x800.png?text=Random+Item',
         name : 'Random Item',
@@ -13,6 +15,10 @@ const ItemComponent = () => {
         discountPrice:100,
         specifications : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quia',
     }
+    const handleAddToCart = () => {
+        addToCart(id,{id,name:item.name,quantity:count,sku:`Sku-${id}`,brand:'Brand 1',price:item.price,image:'https://via.placeholder.com/1000x800.png?text=Random+Item'},count);
+    }
+    console.log(cartItems);
   return (
     <>
     <Header/>
@@ -37,7 +43,7 @@ const ItemComponent = () => {
             <input id='count' value={count} type='number' min={1} readOnly/>
             <button onClick={()=>setCount(count+1)}>+</button>
         </div>
-        <button className="add-to-cart">Add to Cart</button>
+        <button onClick={handleAddToCart} className="add-to-cart">Add to Cart</button>
         <p className="item-specifications">{item.specifications}</p>
       </div>
     </div>

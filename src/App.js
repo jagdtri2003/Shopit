@@ -9,6 +9,7 @@ import './App.css';
 import { CartProvider } from './context/CartContex';
 import UserProfile from './components/UserProfile';
 import ItemComponent from './components/ItemComponent';
+import Cart from './components/Cart';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         <Route path='/signup' element={!user ? <Signup/> : <Navigate to='/'/>}></Route>
         <Route path='/account' element={!user ? <Signup/> : <UserProfile user={user}/>}></Route>
         <Route path="/item/:id" element={<ItemComponent/>} />
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
     </Router>
     </UserContext>
