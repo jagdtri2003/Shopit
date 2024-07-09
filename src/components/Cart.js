@@ -45,6 +45,11 @@ const Cart = () => {
     setTotalAmount(
       cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
     );
+    if(promoCode === "FREE20" && totalAmount>200){
+      setDiscount(totalAmount*0.2);
+    }else{
+      setDiscount(null);
+    }
   }, [cartItems]);
 
   const [discount, setDiscount] = useState(null);
@@ -65,7 +70,7 @@ const Cart = () => {
 
   const handleApplyPromoCode = () => {
     // Apply promo code logic here
-    if (promoCode === "FREE20") {
+    if (promoCode === "FREE20" && totalAmount>200) {
       setDiscount(totalAmount*0.2);
     }
   };
