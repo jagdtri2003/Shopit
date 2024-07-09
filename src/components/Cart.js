@@ -121,7 +121,7 @@ const Cart = () => {
                   {discount && <p>Discount: ₹ {discount.toFixed(2)} ({promoCode})</p> }
                   <p>Total: ₹ {discount ? totalAmount.toFixed(2)-discount.toFixed(2) : totalAmount.toFixed(2)}</p> 
                   <p>(Inclusive of tax ₹ 0.00)</p>
-                  <button onClick={handlePayment(discount ? totalAmount-discount : totalAmount,setCartItems)} className="checkout-button">CHECKOUT</button>
+                  <button onClick={handlePayment(discount ? totalAmount-discount : totalAmount,cartItems,setCartItems)} className="checkout-button">CHECKOUT</button>
                 </div>
               </div>
             </div>

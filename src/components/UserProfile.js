@@ -4,6 +4,7 @@ import Header from './Header';
 import firebaseInstance from '../firebase/firebase.js';
 
 const UserProfile = ({ user }) => {
+  // console.log(firebaseInstance.getOrderHistory(user.uid));
   // user.orders=[
   //   {id:1, date:'27/04/2024',total:'2400'}
   // ]

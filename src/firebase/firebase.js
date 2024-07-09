@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider, signOut, sendPasswordResetEmail, updatePassword, updateEmail, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, collection, doc, setDoc, getDoc, updateDoc, orderBy, startAfter, limit, query, where } from "firebase/firestore";
+import { getFirestore, collection, doc, setDoc,getDocs, getDoc, updateDoc, orderBy, startAfter, limit, query, where } from "firebase/firestore";
 import { getStorage, ref, deleteObject } from "firebase/storage";
 import firebaseConfig from "./config";
 
@@ -37,6 +37,19 @@ class Firebase {
   addUser = (id, user) => setDoc(doc(this.db, "users", id), user);
 
   getUser = (id) => getDoc(doc(this.db, "users", id));
+
+  // Save Order History
+  saveOrderHistory = (order) => {
+    const orderRef = doc(collection(this.db, "orders"));
+    return setDoc(orderRef, order);
+  };
+  // Get Order History
+  getOrderHistory = (uid) => {
+    const orderRef = collection(this.db, "orders");
+    const q = query(orderRef, where("uid", "==", uid), orderBy("date")
+    );
+    return getDocs(q);
+  };
 
   passwordUpdate = (password) => updatePassword(this.auth.currentUser, password);
 
