@@ -41,6 +41,14 @@ const CartItem = ({ item, onRemove }) => (
 const Cart = () => {
   const { cartItems, setCartItems } = useContext(CartContext);
 
+  const [discount, setDiscount] = useState(null);
+  const [promoCode, setPromoCode] = useState("");
+  const [totalAmount, setTotalAmount] = useState(() => {
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  });
   useEffect(() => {
     setTotalAmount(
       cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
@@ -50,16 +58,7 @@ const Cart = () => {
     }else{
       setDiscount(null);
     }
-  }, [cartItems]);
-
-  const [discount, setDiscount] = useState(null);
-  const [promoCode, setPromoCode] = useState("");
-  const [totalAmount, setTotalAmount] = useState(() => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  });
+  },[cartItems, totalAmount]);
   const handleRemove = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
