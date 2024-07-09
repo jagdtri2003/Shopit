@@ -1,25 +1,30 @@
-import useRazorpay from "react-razorpay";
+import { failToast, successToast } from "../components/ToastComponent.js";
 
-const [Razorpay] = useRazorpay();
 
-const handlePayment = useCallback(async () => {
-  const order = await createOrder(params);
+const handlePayment = (amount,setCartItems) => () => {
+  if (typeof window.Razorpay === "undefined") {
+    alert("Razorpay SDK not loaded");
+    return;
+  }
+
 
   const options = {
-    key: "YOUR_KEY_ID",
-    amount: "3000",
+    key: "rzp_test_TNEcCYqxdstfpH",
+    amount: amount * 100,
     currency: "INR",
-    name: "Acme Corp",
+    name: "Shopit",
     description: "Test Transaction",
-    image: "https://example.com/your_logo",
-    order_id: order.id,
-    handler: (res) => {
-      console.log(res);
+    image: "https://c8.alamy.com/comp/2A10TY5/shopping-bag-logo-design-icon-online-shop-symbol-vector-illustrations-2A10TY5.jpg",
+    handler: function (response) {
+      successToast(
+        `Payment successful! Payment ID: ${response.razorpay_payment_id}`
+      );
+      setCartItems([]);
     },
     prefill: {
-      name: "Piyush Garg",
-      email: "youremail@example.com",
-      contact: "9999999999",
+      // name: "Shubham",
+      email: "email@example.com",
+      // contact: "9454355011",
     },
     notes: {
       address: "Razorpay Corporate Office",
@@ -27,8 +32,15 @@ const handlePayment = useCallback(async () => {
     theme: {
       color: "#3399cc",
     },
+    modal: {
+      ondismiss: function () {
+        failToast("Payment Cancelled !!");
+      },
+    },
   };
 
-  const rzpay = new Razorpay(options);
-  rzpay.open();
-}, [Razorpay]);
+  const rzp1 = new window.Razorpay(options);
+  rzp1.open();
+};
+
+export {handlePayment};

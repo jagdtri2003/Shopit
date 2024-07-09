@@ -10,6 +10,7 @@ import { CartProvider } from './context/CartContex';
 import UserProfile from './components/UserProfile';
 import ItemComponent from './components/ItemComponent';
 import Cart from './components/Cart';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
     <>
     <CartProvider>
     <UserContext>
+    <ToastContainer/>
     <Router>
       <Routes>
         <Route path='/' element={user ? <Home/> : <Navigate to="/login"/>}></Route>
@@ -55,6 +57,7 @@ function App() {
         <Route path='/account' element={!user ? <Signup/> : <UserProfile user={user}/>}></Route>
         <Route path="/item/:id" element={<ItemComponent/>} />
         <Route path='/cart' element={<Cart/>} />
+        
       </Routes>
     </Router>
     </UserContext>

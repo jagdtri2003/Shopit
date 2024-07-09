@@ -3,7 +3,7 @@ import "../style/cart.css";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import { CartContext } from "../context/CartContex";
-
+import { handlePayment } from "../services/payment";
 const CartItem = ({ item, onRemove }) => (
   <div className="cart-item">
     <table>
@@ -72,39 +72,6 @@ const Cart = () => {
     }
   };
 
-  const handlePayment = (amount) => () => {
-    if (typeof window.Razorpay === "undefined") {
-      alert("Razorpay SDK not loaded");
-      return;
-    }
-
-    const options = {
-      key: 'rzp_test_TNEcCYqxdstfpH',
-      amount: amount * 100,
-      currency: 'INR',
-      name: 'Shopit',
-      description: 'Test Transaction',
-      image: 'https://example.com/your_logo',
-      handler: function (response) {
-        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
-      },
-      prefill: {
-        name: 'Your Name',
-        email: 'email@example.com',
-        contact: '9454355011'
-      },
-      notes: {
-        address: 'Razorpay Corporate Office'
-      },
-      theme: {
-        color: '#3399cc'
-      }
-    };
-
-    const rzp1 = new window.Razorpay(options);
-    rzp1.open();
-  };
-
   return (
     <>
       <Header />
@@ -154,7 +121,7 @@ const Cart = () => {
                   {discount && <p>Discount: ₹ {discount.toFixed(2)} ({promoCode})</p> }
                   <p>Total: ₹ {discount ? totalAmount.toFixed(2)-discount.toFixed(2) : totalAmount.toFixed(2)}</p> 
                   <p>(Inclusive of tax ₹ 0.00)</p>
-                  <button onClick={handlePayment(discount ? totalAmount-discount : totalAmount)} className="checkout-button">CHECKOUT</button>
+                  <button onClick={handlePayment(discount ? totalAmount-discount : totalAmount,setCartItems)} className="checkout-button">CHECKOUT</button>
                 </div>
               </div>
             </div>
