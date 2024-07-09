@@ -58,20 +58,51 @@ const Cart = () => {
     }else{
       setDiscount(null);
     }
-  },[cartItems, totalAmount]);
+  },[cartItems, totalAmount,promoCode]);
   const handleRemove = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  const handlePromoCodeChange = (e) => {
-    setPromoCode(e.target.value);
-  };
 
   const handleApplyPromoCode = () => {
     // Apply promo code logic here
+    setPromoCode(document.getElementById('promo-code').value);
     if (promoCode === "FREE20" && totalAmount>200) {
       setDiscount(totalAmount*0.2);
     }
+  };
+
+  const handlePayment = (amount) => () => {
+    if (typeof window.Razorpay === "undefined") {
+      alert("Razorpay SDK not loaded");
+      return;
+    }
+
+    const options = {
+      key: 'rzp_test_TNEcCYqxdstfpH',
+      amount: amount * 100,
+      currency: 'INR',
+      name: 'Shopit',
+      description: 'Test Transaction',
+      image: 'https://example.com/your_logo',
+      handler: function (response) {
+        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: 'Your Name',
+        email: 'email@example.com',
+        contact: '9454355011'
+      },
+      notes: {
+        address: 'Razorpay Corporate Office'
+      },
+      theme: {
+        color: '#3399cc'
+      }
+    };
+
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
   };
 
   return (
@@ -123,17 +154,15 @@ const Cart = () => {
                   {discount && <p>Discount: ₹ {discount.toFixed(2)} ({promoCode})</p> }
                   <p>Total: ₹ {discount ? totalAmount.toFixed(2)-discount.toFixed(2) : totalAmount.toFixed(2)}</p> 
                   <p>(Inclusive of tax ₹ 0.00)</p>
-                  <button className="checkout-button">CHECKOUT</button>
+                  <button onClick={handlePayment(discount ? totalAmount-discount : totalAmount)} className="checkout-button">CHECKOUT</button>
                 </div>
               </div>
             </div>
             <div className="promo-code">
               <h3>Promotion code?</h3>
               <br/>
-              <input
+              <input id="promo-code"
                 type="text"
-                value={promoCode}
-                onChange={handlePromoCodeChange}
                 placeholder="Enter coupon code"
               />
               <button className="apply-button" onClick={handleApplyPromoCode}>
