@@ -8,11 +8,11 @@ function FeaturedProducts() {
       return discount>60 ? discount-50 : discount+1;
     }
     const featuredList = [
-        'https://via.placeholder.com/300x200.png?text=Slide+1',
-        'https://via.placeholder.com/300x200.png?text=Slide+2',
-        'https://via.placeholder.com/300x200.png?text=Slide+3',
-        'https://via.placeholder.com/300x200.png?text=Slide+4',
-        'https://via.placeholder.com/300x200.png?text=Slide+5',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0Sds1LwjVmAC8qgXOb2-NQipIjkWWXyVSg&s',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKqaVlTzAjkWzG8_QJFqQRevGRCBcOefiPLw&s',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgW8FHvRuH6AlUkCe481pnxZeQq4DAWHMdmA&s',
+        'https://cdn.thewirecutter.com/wp-content/media/2023/10/smartphone-2048px-4861.jpg?auto=webp&quality=30&width=1024',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn2yscgkxDOnZgwVJQt6Pa8VGrfBfJe5D5pA&s',
     ]
   return (
     <section className="featured-products">
@@ -24,7 +24,7 @@ function FeaturedProducts() {
       <div className="product-carousel">
         {featuredList.map((item, index) => (
             <Link to={`/item/${index}`} className="product-card" key={index}>
-                <img loading='lazy' src={item} alt="" />
+                <img style={{height:'80%'}} loading='lazy' src={item} alt="" />
                 <div className='discount'> <span className='discount-per'>{createDiscount()}% off</span> Limited time deal</div>
             </Link>
         ))}

@@ -24,7 +24,7 @@ const ImageSlider = ({ images }) => {
             <img 
               src={image} 
               alt={`slide-${index}`} 
-              style={{ width: '100%', height: '33vh',objectFit:'cover' }} 
+              style={{ width: '100%', height: '40vh',objectFit:'cover' }} 
             />
           </div>
         ))}

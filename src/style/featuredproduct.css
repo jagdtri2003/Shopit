@@ -30,7 +30,7 @@
 
 .product-card{
     text-decoration: none;
-    margin: 5px;
+    margin: 2px;
     border-radius: 10px;
     flex: 1 1 24%; /* Flex-grow, flex-shrink, flex-basis */
     max-width: 24%;
@@ -38,7 +38,7 @@
 }
 
 .product-card img:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
 }
 
 
@@ -68,6 +68,7 @@
 }
 
 .shop-now{
+    text-decoration: none;
     margin: 4% auto;
     background-color: rgb(35, 35, 35);
     border: none;
