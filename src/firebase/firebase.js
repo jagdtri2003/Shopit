@@ -46,7 +46,7 @@ class Firebase {
   // Get Order History
   getOrderHistory = (uid) => {
     const orderRef = collection(this.db, "orders");
-    const q = query(orderRef, where("uid", "==", uid), orderBy("date")
+    const q = query(orderRef, where("id", "==", uid), orderBy("date")
     );
     return getDocs(q);
   };

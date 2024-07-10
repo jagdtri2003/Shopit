@@ -17,16 +17,17 @@ const handlePayment = (amount, cartItems, setCartItems) => () => {
       "https://c8.alamy.com/comp/2A10TY5/shopping-bag-logo-design-icon-online-shop-symbol-vector-illustrations-2A10TY5.jpg",
     handler: function (response) {
       successToast(
-        `Payment successful! Payment ID: ${response.razorpay_payment_id}`
+        `Payment successful!`
       );
       firebaseInstance.saveOrderHistory({
         id: firebaseInstance.auth.currentUser.uid,
+        paymentId:response.razorpay_payment_id,
         items: [...cartItems],
         total: cartItems.reduce(
           (total, item) => total + item.price * item.quantity,
           0
         ),
-        date: new Date().toDateString(),
+        date: new Date().toDateString()+" "+new Date().toLocaleTimeString(),
       });
       setCartItems([]);
     },

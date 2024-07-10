@@ -3,8 +3,17 @@ import '../style/userprofile.css';
 import Header from './Header';
 import firebaseInstance from '../firebase/firebase.js';
 
-const UserProfile = ({ user }) => {
-  // console.log(firebaseInstance.getOrderHistory(user.uid));
+const UserProfile =  ({ user }) => {
+
+  firebaseInstance.getOrderHistory(user.uid).then((querySnapshot)=>{
+    if (!querySnapshot.empty){
+      user.orders = [];
+      querySnapshot.forEach((doc)=>{
+        user.orders.push(doc.data());
+      });
+      // console.log(orderHistory);
+    }
+  })
   // user.orders=[
   //   {id:1, date:'27/04/2024',total:'2400'}
   // ]
@@ -27,7 +36,7 @@ const UserProfile = ({ user }) => {
           <ul>
             {user.orders.map((order) => (
               <li key={order.id}>
-                <p>Order ID: {order.id}</p>
+                <p>Order ID: {order.paymentId}</p>
                 <p>Date: {order.date}</p>
                 <p>Total: ₹ {order.total}</p>
               </li>
