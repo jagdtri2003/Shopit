@@ -30,17 +30,24 @@
 
 .product-card{
     text-decoration: none;
-    margin: 2px;
+    margin: 5px;
     border-radius: 10px;
-    flex: 1 1 32%; /* Flex-grow, flex-shrink, flex-basis */
-    max-width: 32%;
+    flex: 1 1 24%; /* Flex-grow, flex-shrink, flex-basis */
+    max-width: 24%;
     box-sizing: border-box;
 }
 
+.product-card img:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+
 .product-card img{
+    transition: transform 0.2s;
     border-radius: 10px;
     width: 100%;
-    height: auto;
+    height:auto; /* Set a fixed height */
+    object-fit: cover; 
 }
 
 .discount-per{
@@ -82,5 +89,12 @@
     .product-card {
         flex: 1 1 95%; /* Full width for very small screens */
         max-width: 95%;
+    }
+}
+
+@media (max-width:1024px){
+    .product-card {
+        flex: 1 1 32%; /* Full width for very small screens */
+        max-width: 32%;
     }
 }

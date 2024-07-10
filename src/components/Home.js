@@ -5,12 +5,14 @@ import Header from './Header';
 import ImageSlider from './ImageSlider';
 import FeaturedProducts from './FeaturedProduct';
 import Categories from './Categories';
+import img1 from '../images/img1.png'
+import img2 from '../images/img2.jpg'
 
 
 function Home() {
   const images = [
-    'https://via.placeholder.com/1000x400.png?text=Slide+1',
-    'https://via.placeholder.com/1000x400.png?text=Slide+2',
+    img1,
+    img2,
     'https://via.placeholder.com/1000x400.png?text=Slide+3',
     'https://via.placeholder.com/1000x400.png?text=Slide+4',
     'https://via.placeholder.com/1000x400.png?text=Slide+5',

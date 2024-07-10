@@ -17,14 +17,14 @@ const ImageSlider = ({ images }) => {
   };
 
   return (
-    <div style={{ width: '100%', overflow: 'hidden' }}>
+    <div style={{ width: '100%', overflow: 'hidden'}}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
             <img 
               src={image} 
               alt={`slide-${index}`} 
-              style={{ width: '100%', height: 'auto' }} 
+              style={{ width: '100%', height: '33vh',objectFit:'cover' }} 
             />
           </div>
         ))}
