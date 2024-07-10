@@ -24,7 +24,7 @@ function FeaturedProducts() {
       <div className="product-carousel">
         {featuredList.map((item, index) => (
             <Link to={`/item/${index}`} className="product-card" key={index}>
-                <img loading='lazy' src={item} alt="product" />
+                <img loading='lazy' src={item} alt="" />
                 <div className='discount'> <span className='discount-per'>{createDiscount()}% off</span> Limited time deal</div>
             </Link>
         ))}
