@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import '../style/imageslider.css';
 
 const ImageSlider = ({ images }) => {
   const settings = {
@@ -21,10 +22,10 @@ const ImageSlider = ({ images }) => {
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
-            <img 
+            <img className='slider-img'
               src={image} 
               alt={`slide-${index}`} 
-              style={{ width: '100%', height: '40vh',objectFit:'cover' }} 
+              style={{ width: '100%', height: '30vh',objectFit:'cover' }} 
             />
           </div>
         ))}

@@ -93,9 +93,9 @@
     }
 }
 
-@media (max-width:1024px){
+/* @media (max-width:12140px){
     .product-card {
-        flex: 1 1 32%; /* Full width for very small screens */
-        max-width: 32%;
+        flex: 1 1 33%; 
+        max-width: 33%;
     }
-}
+} */
