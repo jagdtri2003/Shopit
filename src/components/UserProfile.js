@@ -28,7 +28,7 @@ const UserProfile =  ({ user }) => {
   return (
     <>
     <Header/>
-    <div className="centered-container">
+    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'30px'}}>
     <div className="user-profile">
       <h1>User Profile</h1>
       <div className="user-info">

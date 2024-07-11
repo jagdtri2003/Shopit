@@ -1,10 +1,11 @@
 import React,{useState,useContext} from 'react';
 import '../style/itemcomponent.css';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import Header from './Header';
 import { CartContext } from '../context/CartContex.js';
 import {successToast} from './ToastComponent.js'
 import product from '../products/products.js';
+import Footer from './Footer.js';
 
 const ItemComponent = () => {
     const { id } = useParams();
@@ -25,15 +26,18 @@ const ItemComponent = () => {
   return (
     <>
     <Header/>
-    <div style={{margin:'40px'}} className="item-container">
+    <div className="breadcrumb">
+          <Link to="/">Home</Link> / <span>{item.name}</span>
+    </div>
+    <div style={{margin:'30px'}} className="item-container">
       <div className="item-image">
-        <img src={item.image} alt={item.name} />
+        <img style={{marginTop:'30px'}} src={item.image} alt={item.name} />
       </div>
       <div className="item-details">
         <h2 className="item-name">{item.name}</h2>
         <p><strong>SKU ID:</strong>  Sku-{id}</p>
         <p>
-            <strong>» Brand:</strong> Brand 1
+            <strong>Brand:</strong> Brand 1
         </p>
         <div className="item-price">
           <span className="price">₹ {item.price}</span>
@@ -50,6 +54,7 @@ const ItemComponent = () => {
         <p className="item-specifications">{item.specifications}</p>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };
