@@ -98,6 +98,9 @@
     border-top: 1px solid #444;
     margin-top: 20px;
 }
+.footer-name:hover{
+    color: #ffb400;
+}
 
 
 

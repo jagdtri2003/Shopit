@@ -11,6 +11,7 @@ import UserProfile from './components/UserProfile';
 import ItemComponent from './components/ItemComponent';
 import Cart from './components/Cart';
 import { ToastContainer } from 'react-toastify';
+import ContactUs from './components/ContactUs';
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
         <Route path='/account' element={!user ? <Signup/> : <UserProfile user={user}/>}></Route>
         <Route path="/item/:id" element={<ItemComponent/>} />
         <Route path='/cart' element={<Cart/>} />
-        
+        <Route path='/contact' element={<ContactUs/>}/>
       </Routes>
     </Router>
     </UserContext>
