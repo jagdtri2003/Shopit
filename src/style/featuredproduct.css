@@ -79,23 +79,24 @@
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (width <= 1040px){
+    .product-card {
+        flex: 1 1 32% ;
+        max-width: 32%;
+    }
+}
+
+@media (width <= 768px) {
     .product-card {
         flex: 1 1 49%; /* Adjust the flex-basis for smaller screens */
         max-width: 49%;
     }
 }
 
-@media (max-width: 480px) {
+@media (width<= 480px) {
     .product-card {
         flex: 1 1 95%; /* Full width for very small screens */
         max-width: 95%;
     }
 }
 
-/* @media (max-width:12140px){
-    .product-card {
-        flex: 1 1 33%; 
-        max-width: 33%;
-    }
-} */

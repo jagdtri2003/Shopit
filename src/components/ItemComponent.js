@@ -2,23 +2,20 @@ import React,{useState,useContext} from 'react';
 import '../style/itemcomponent.css';
 import { useParams } from 'react-router-dom';
 import Header from './Header';
-import { CartContext } from '../context/CartContex';
+import { CartContext } from '../context/CartContex.js';
 import {successToast} from './ToastComponent.js'
+import product from '../products/products.js';
 
 const ItemComponent = () => {
     const { id } = useParams();
     const [count, setCount] = useState(1);
     const {cartItems,addToCart} = useContext(CartContext);
-    const item = {
-        image:'https://via.placeholder.com/1000x800.png?text=Random+Item',
-        name : 'Random Item',
-        price : 90,
-        discountPrice:100,
-        specifications : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quia',
-    }
+
+    const item = product[id];
+
     const handleAddToCart = (e) => {
         e.target.setAttribute('disabled','true');
-        addToCart(id,{id,name:item.name,quantity:count,sku:`Sku-${id}`,brand:'Brand 1',price:item.price,image:'https://via.placeholder.com/1000x800.png?text=Random+Item'},count);
+        addToCart(id,{id,name:item.name,quantity:count,sku:`Sku-${id}`,brand:'Brand 1',price:item.price,image:item.image},count);
         successToast("Item Added to Cart !!");
         setTimeout(()=>{
           e.target.removeAttribute('disabled');

@@ -1,13 +1,13 @@
 .cart {
   display: flex;
   padding: 20px;
-  max-width: 1200px; /* Adjusted width for layout */
+  max-width: 1200px; 
   margin: auto;
   flex-wrap: wrap;
 }
 
 .cart-items-container {
-  flex: 3; /* Takes up more space */
+  flex: 3; 
 }
 
 .order-summary-container {
