@@ -6,6 +6,7 @@ import { CartContext } from '../context/CartContex.js';
 import {successToast} from './ToastComponent.js'
 import product from '../products/products.js';
 import Footer from './Footer.js';
+import StarRatings from 'react-star-ratings';
 
 const ItemComponent = () => {
     const { id } = useParams();
@@ -32,6 +33,12 @@ const ItemComponent = () => {
     <div style={{margin:'30px'}} className="item-container">
       <div className="item-image">
         <img style={{marginTop:'30px'}} src={item.image} alt={item.name} />
+        <br/>
+        <StarRatings rating={4+Math.random()}         
+        starRatedColor="orange"
+        starDimension="40px"
+        starSpacing="5px"
+        />
       </div>
       <div className="item-details">
         <h2 className="item-name">{item.name}</h2>

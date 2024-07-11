@@ -34,7 +34,9 @@ const UserProfile =  ({ user }) => {
       <div className="user-info">
       <img src={user.profileImage?user.profileImage :`https://via.placeholder.com/300x200.png?text=${user.displayName.charAt(0)}`} alt="Profile" className="profile-image" />
       <div className="user-details">
-      <h2>{user.displayName}  <i title='Logout' onClick={()=>firebaseInstance.signOut()} style={{color:'red',cursor:'pointer'}} className="fa-solid fa-right-from-bracket"></i></h2>
+      <h2>{user.displayName}  <i title='Logout' onClick={()=>{firebaseInstance.signOut()
+        localStorage.clear();
+      }} style={{color:'red',cursor:'pointer'}} className="fa-solid fa-right-from-bracket"></i></h2>
       <p>Email: {user.email}</p>
       </div>
       </div>

@@ -9,10 +9,10 @@ const handlePayment = (amount, cartItems, setCartItems) => () => {
 
   const options = {
     key: "rzp_test_TNEcCYqxdstfpH",
-    amount: amount * 100,
+    amount: amount ,
     currency: "INR",
     name: "Shopit",
-    description: "Test Transaction",
+    description: "Pay to Shopit",
     image:
       "https://c8.alamy.com/comp/2A10TY5/shopping-bag-logo-design-icon-online-shop-symbol-vector-illustrations-2A10TY5.jpg",
     handler: function (response) {
@@ -23,10 +23,7 @@ const handlePayment = (amount, cartItems, setCartItems) => () => {
         id: firebaseInstance.auth.currentUser.uid,
         paymentId:response.razorpay_payment_id,
         items: [...cartItems],
-        total: cartItems.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0
-        ),
+        total:(amount/100).toFixed(2),
         date: new Date().toDateString()+" "+new Date().toLocaleTimeString(),
       });
       setCartItems([]);

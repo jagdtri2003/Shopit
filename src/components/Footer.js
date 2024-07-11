@@ -27,7 +27,7 @@ const Footer = () => {
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/jagdamba-tripathi/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div className="footer-section">

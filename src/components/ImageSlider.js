@@ -24,6 +24,7 @@ const ImageSlider = ({ images }) => {
           <div key={index}>
             <img className='slider-img'
               src={image} 
+              loading='lazy'
               alt={`slide-${index}`} 
               style={{ width: '100%', height: '30vh',objectFit:'cover' }} 
             />
