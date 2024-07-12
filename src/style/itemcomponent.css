@@ -8,8 +8,9 @@
 
 .item-image img {
   width: 45vw;
-  max-width: 600px;
+  max-width: 400px;
   border-radius: 10px;
+  max-height: 55vh;
 }
 
 .item-details {

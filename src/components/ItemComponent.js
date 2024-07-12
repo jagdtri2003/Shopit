@@ -37,7 +37,7 @@ const ItemComponent = () => {
     successToast("Item Added to Cart !!");
     setTimeout(() => {
       e.target.removeAttribute("disabled");
-    }, 5000);
+    }, 3000);
   };
   console.log(cartItems);
   return (
@@ -50,17 +50,17 @@ const ItemComponent = () => {
         <div className="item-image">
           <img style={{ marginTop: "30px" }} src={item.image} alt={item.name} />
           <br />
-          <StarRatings
-            rating={4 + Math.random()}
-            starRatedColor="orange"
-            starDimension="40px"
-            starSpacing="5px"
-          />
         </div>
         <div className="item-details">
           <h2 className="item-name">{item.name}</h2>
           <p>
-            <strong>SKU ID:</strong> Sku-{id}
+            <strong>SKU ID:</strong> Sku-{id} &nbsp; &nbsp;
+            <StarRatings
+            rating={4 + Math.random()}
+            starRatedColor="orange"
+            starDimension="20px"
+            starSpacing="5px"
+          />
           </p>
           <p>
             <strong>Brand:</strong> {item.brand}
