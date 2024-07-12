@@ -1,5 +1,6 @@
 const product = {
     1001:{
+        id:1001,
         image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0Sds1LwjVmAC8qgXOb2-NQipIjkWWXyVSg&s',
         name:'Blue Sapphire Pendant',
         price:54799,
@@ -9,6 +10,7 @@ const product = {
         category:'Jewelry',
     },
     1002:{
+        id:1002,
         image:'https://kinclimg3.bluestone.com/f_jpg,c_scale,w_828,q_80,b_rgb:f0f0f0/giproduct/BIDG0319R180_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-66194.png',
         name:'The Gianna Ring',
         price:54790,
@@ -18,6 +20,7 @@ const product = {
         category:'Jewelry'
     },
     1003:{
+        id:1003,
         image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKqaVlTzAjkWzG8_QJFqQRevGRCBcOefiPLw&s',
         name:'TISSOT Sport Analog Watch',
         price:43499,
@@ -27,6 +30,7 @@ const product = {
         category:'watch'
     },
     1004:{
+        id:1004,
         image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgW8FHvRuH6AlUkCe481pnxZeQq4DAWHMdmA&s',
         name:'Air Tube Earphones Headset',
         price:1499,
@@ -36,15 +40,17 @@ const product = {
         category:'earphone'
     },
     1005:{
-        image:'https://cdn.thewirecutter.com/wp-content/media/2023/10/Smartphone-2048px-4861.jpg?auto=webp&quality=10&width=1024',
-        name:'Samsung Galaxy S21 Ultra 5G',
-        price:22379,
-        discountPrice:25802,
-        specifications:'The Samsung Galaxy S21 Ultra 5G is a high-end Smartphone that offers a powerful processor, a large display, and a long-lasting battery. It also has a triple rear camera setup that allows you to take stunning photos and videos.',
+        id:1005,
+        image:'https://m.media-amazon.com/images/I/51hqXIAVXAL._SL1500_.jpg',
+        name:'Samsung Galaxy S23 Ultra 5G (Green, 12GB, 256GB Storage)',
+        price:86499,
+        discountPrice:149999,
+        specifications:'The Samsung Galaxy S23 Ultra 5G is a high-end Smartphone that offers a powerful processor, a large display, and a long-lasting battery. It also has a triple rear camera setup that allows you to take stunning photos and videos.',
         brand:'Samsung',
         category:'Smartphone'
     },
     1006:{
+        id:1006,
         image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn2yscgkxDOnZgwVJQt6Pa8VGrfBfJe5D5pA&s',
         name:'LG Inverter AC, 2 Ton',
         price: 49599,
@@ -54,6 +60,7 @@ const product = {
         category:'ac'
     },
     1007:{
+        id:1007,
         image:'https://kinclimg6.bluestone.com/f_jpg,c_scale,w_1024,q_80,b_rgb:f0f0f0/giproduct/BISS0316R31_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-14636.png',
         name:'The Kael Ring',
         price:60064,
@@ -63,6 +70,7 @@ const product = {
         category:'Jewelry'
     },
     1008:{
+        id:1008,
         image:'https://dajdiamond.com/wp-content/uploads/2022/04/DOC-ST-27-FY.jpg',
         name:'The Daj Diamond Earring',
         price: 53499,
@@ -72,6 +80,7 @@ const product = {
         category:'Jewelry'
     },
     1009:{
+        id:1009,
         image:'https://m.media-amazon.com/images/I/71aiqeP-APL._SL1500_.jpg',
         name:'Redmi Note 13 Pro (Coral Purple, 8GB RAM, 128GB Storage) | 1.5K AMOLED | 200MP Hi-Res Camera | Flagship 4nm SD 7s Gen 2 | 67W TurboCharge',
         price: 24999,
@@ -81,6 +90,7 @@ const product = {
         category:'Smartphone'
     },
     1010:{
+        id:1010,
         image:'https://m.media-amazon.com/images/I/71d7rfSl0wL._SL1500_.jpg',
         name:'Apple iPhone 15(256 GB) - Blue',
         price: 81999,
@@ -90,6 +100,7 @@ const product = {
         category:'Smartphone'
     },
     1011:{
+        id:1011,
         image:'https://m.media-amazon.com/images/I/81vxWpPpgNL._SL1500_.jpg',
         name:'Samsung Galaxy S24 Ultra 5G AI Smartphone (Titanium Gray, 12GB, 1TB Storage)',
         price: 159999,
@@ -99,6 +110,7 @@ const product = {
         category:'Smartphone'
     },
     1012:{
+        id:1012,
         image:"https://m.media-amazon.com/images/I/81zU65mJmJL._SL1500_.jpg",
         name:'Xiaomi 14 Ultra (White, 16GB RAM, 512GB Storage) | 50 MP Leica Quad Camera | 2K 120 Hz LTPO AMOLED | Flagship Snapdragon 8 Gen 3 | 90 W Hypercharge',
         price: 99998,
@@ -108,14 +120,17 @@ const product = {
         category:'Smartphone'
     },
     1013:{
+        id:1013,
         image:'https://m.media-amazon.com/images/I/717Qo4MH97L._SL1500_.jpg',
         name:'OnePlus 12 (Flowy Emerald, 12GB RAM, 256GB Storage)',
         price: 64999,
+        discountPrice:75999,
         specifications:'The OnePlus 12 is a high-end Smartphone that offers a powerful processor, a large display, and a long-lasting battery. It also has a triple rear camera setup that allows you to take stunning photos and videos.',
         brand:'OnePlus',
         category:'Smartphone'
     },
     1014:{
+        id:1014,
         image:"https://m.media-amazon.com/images/I/610IIi6wHuL._SY879_.jpg",
         name:'Lymio Track Pant for Men || Track Pants || Plain Track Pant',
         price: 999,
@@ -125,6 +140,7 @@ const product = {
         category:'Clothes'
     },
     1015:{
+        id:1015,
         image:'https://m.media-amazon.com/images/I/612JvadSUzL._SY879_.jpg',
         name:'Women Floral Print Anarkali Kurta With Pant and Dupatta',
         price: 999,
@@ -134,6 +150,7 @@ const product = {
         category:'Clothes'
     },
     1016:{
+        id:1016,
         image:'https://m.media-amazon.com/images/I/61493z-oqKL._SY879_.jpg',
         name:"Avantika Fashion Women's Kanjivaram Soft Pure Silk Banarasi Sarees With Blouse Piece",
         price: 899,
@@ -143,6 +160,7 @@ const product = {
         category:'Clothes'
     },
     1017:{
+        id:1017,
         image:'https://m.media-amazon.com/images/I/518n4wn7k6L.jpg',
         name:'FUNKY RICH Funkyrich® Textured Popcorn Shirts for Men || Casual Shirt for Men ',
         price: 699,
@@ -152,6 +170,7 @@ const product = {
         category:'Clothes'
     },
     1018:{
+        id:1018,
         image:'https://m.media-amazon.com/images/I/61mfMh+cEkL._SL1500_.jpg',
         name:'Apple 2023 MacBook Pro (16-inch, M3 Max chip with 16‑core CPU and 40‑core GPU, 48GB Unified Memory, 1TB) - Space Black',
         price: 379990,
@@ -161,6 +180,7 @@ const product = {
         category:'Laptop'
     },
     1019:{
+        id:1019,
         image:'https://m.media-amazon.com/images/I/71tcUliY1hL._SL1500_.jpg',
         name:'HP Laptop 15s, 12th Gen Intel Core i5-1235U, 15.6-inch, FHD, 16GB DDR4, 512GB SSD, Intel Iris Xe graphics, Backlit KB',
         price: 52025,
@@ -170,6 +190,7 @@ const product = {
         category:'Laptop'
     },
     1020:{
+        id:1020,
         image:'https://m.media-amazon.com/images/I/71iWEMpnwCL._SL1500_.jpg',
         name:'MSI Crosshair 16 HX, Intel 14th Gen. i7-14700HX,240Hz Gaming Laptop(1TB SSD NVIDIA GeForce RTX 4060)',
         price:148046,
@@ -179,6 +200,7 @@ const product = {
         category:'Laptop'
     },
     1021:{
+        id:1021,
         image:'https://m.media-amazon.com/images/I/81fPDLbiWfL._SL1500_.jpg',
         name:'Mi Ultra 3K Resolution Display Intel Core I5-11300H Light Laptop (8Gb/512Gb Ssd/Backlit Kb/Fingerprint Sensor)',
         price: 47999,
@@ -188,6 +210,7 @@ const product = {
         category:'Laptop'
     },
     1022:{
+        id:1022,
         image:'https://m.media-amazon.com/images/I/61xkKiYZVZL._SL1500_.jpg',
         name:'ASUS Vivobook 16X Thin and Light Laptop,AMD Ryzen 5 5600H, 16 inch(8GB RAM/512GB SSD/Silver)',
         price: 49999,
@@ -197,6 +220,7 @@ const product = {
         category:'Laptop'
     },
     1023:{
+        id:1023,
         image:'https://m.media-amazon.com/images/I/81cPy3CpDxL._SX695_.jpg',
         name:'SPARX mens Sx0678g Sneaker',
         price: 1259,
@@ -206,6 +230,7 @@ const product = {
         category:'Shoes'
     },
     1024:{
+        id:1024,
         image:'https://m.media-amazon.com/images/I/61BzpN826fL._SY695_.jpg',
         name:"Campus Men's AGR-004 Walking Shoes",
         price: 699,
@@ -215,6 +240,7 @@ const product = {
         category:'Shoes'
     },
     1025:{
+        id:1025,
         image:'https://m.media-amazon.com/images/I/61JEvj1nj5L._SY695_.jpg',
         name:'Nike Men\'s Air Jordan 1 MID SE Black/White/Gold 852542-007',
         price: 23757,
@@ -224,6 +250,7 @@ const product = {
         category:'Shoes'
     },
     1026:{
+        id:1026,
         image:'https://m.media-amazon.com/images/I/71V798w4qhL._SL1500_.jpg',
         name:'Xiaomi 138 cm (55 inches) X 4K Dolby Vision Series Smart Google TV L55M8-A2IN (Black)',
         price:37999,
@@ -233,6 +260,7 @@ const product = {
         category:'TV'
     },
     1027:{
+        id:1027,
         image:'https://m.media-amazon.com/images/I/81Tfy967TKL._SL1500_.jpg',
         name:'LG 80 cm (32 inches) HD Ready Smart LED TV 32LM563BPTC (Dark Iron Gray)',
         price: 13990,
@@ -242,6 +270,7 @@ const product = {
         category:'TV'
     },
     1028:{
+        id:1028,
         image:'https://m.media-amazon.com/images/I/91mRUNnqqnL._SL1500_.jpg',
         name:'Samsung 108 cm (43 inches) Full HD Smart LED TV UA43T5450AKXXL (Black)',
         price: 26990,
@@ -251,6 +280,7 @@ const product = {
         category:'TV'
     },
     1029:{
+        id:1029,
         image:'https://m.media-amazon.com/images/I/5126gXnEjFL._SL1087_.jpg',
         name:'Acer 100 cm (40 inches) Advanced I Series Full HD Smart LED Google TV AR40GR2841FDFL (Black)',
         price: 17990,
@@ -260,6 +290,7 @@ const product = {
         category:'TV'
     },
     1030:{
+        id:1030,
         image:'https://m.media-amazon.com/images/I/81MRU+3RJLL._SL1500_.jpg',
         name:'Sony Bravia 139 cm (55 inches) 4K Ultra HD Smart LED Google TV KD-55X74L (Black)',
         price: 57990,
@@ -267,6 +298,16 @@ const product = {
         specifications:'The Sony Bravia 139 cm (55 inches) 4K Ultra HD Smart LED Google TV KD-55X74L is a high-end TV that offers a large display and a powerful processor. It also has a sleek design that makes it perfect for watching movies and TV shows.',
         brand:'Sony',
         category:'TV'
+    },
+    1031:{
+        id:1031,
+        image:'https://m.media-amazon.com/images/I/71GVek0jwfS._SX679_.jpg',
+        name:'SHOPPING QUEEN Women Cotton A-Line Kurta | 100% Cotton | 3/4 Sleeve',
+        price:789,
+        discountPrice:2299,
+        specifications:'This fabric keeps you cool during summers and warm during winters. The kurta is made from pure cotton, with a plain silhouette, which gives it that look. It\'s best for office wear, casual or night wear. This is a beautiful cotton kurta with a traditional print on it. This can be worn casually or as a party wear. The fabric is soft and comfortable to wear with all the new trends.',
+        brand:'Shopping Quenn',
+        category:"clothes"
     }
 }
 
