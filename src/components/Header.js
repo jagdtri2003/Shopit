@@ -1,19 +1,33 @@
-import React,{useContext} from 'react';
+import React,{useContext,useState} from 'react';
 import '../style/header.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContex';
 
 function Header() {
 
   const {cart} = useContext(CartContext);
+  const [search,setSearch] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = () =>{
+    if (search.trim()){
+      navigate(`/search/${search}`);
+    }
+  }
+  const handleKeyDown = (e) =>{
+    if(e.key ==='Enter'){
+      handleSubmit();
+    }
+  }
 
   return (
     <header className="header">
       <Link to='/' className="logo">Shopit</Link>
-      <input type="text" className="search-bar" placeholder="Search for products..." />
-      <span className='search-logo' ><i class="fa-solid fa-magnifying-glass"></i></span> 
+      <input value={search} onChange={(e)=>setSearch(e.target.value)} type="text" className="search-bar" placeholder="Search for products..." onKeyDown={handleKeyDown}/>
+      <span style={{cursor:'pointer'}} onClick={handleSubmit} className='search-logo' ><i className="fa-solid fa-magnifying-glass"></i></span> 
       <nav className="navigation">
-        <Link className='navigation-item' to="/account"><i title='Account' class="fa-duotone fa-user"></i></Link>
+        <Link className='navigation-item' to="/account"><i title='Account' className="fa-duotone fa-user"></i></Link>
         <Link className='navigation-item' to="/cart">
         <div className="cart-container">
             <i title="Your Cart" className="fa-duotone fa-cart-shopping cart-icon"></i>
