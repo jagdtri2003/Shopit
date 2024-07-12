@@ -14,7 +14,7 @@ function CategoryResult() {
     <div className="breadcrumb">
         <Link to="/">Home</Link> / <span>{categoryName[0].toUpperCase()+categoryName.slice(1)}</span>
     </div>
-    <div style={{marginLeft:'10vw'}} className="category">
+    <div className="category">
       <h2>Showing Results for {categoryName[0].toUpperCase()+categoryName.slice(1)} ...</h2>
       <div style={{paddingBottom:'30px'}} className="product-list">
         {products.map((product) => (
