@@ -16,7 +16,7 @@ function Categories() {
           img:'https://cdn.vox-cdn.com/thumbor/3w70tjAjKqJupjMH5cHEQesbD5U=/0x0:2040x1360/2000x1333/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23795434/vpavic_220708_5335_0076.jpg',
           title:'Mobile Phones',
           desc:"Explore our wide range of mobile phones, featuring the latest technology and cutting-edge designs.",
-          link:'mobile'
+          link:'smartphone'
         },
         {
           img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStn-MtID2dZPKfdnzZmgF1kzehZSZSyIrXRw&s',
@@ -40,7 +40,7 @@ function Categories() {
           img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kPdqlz2d4dYcKlnzHgxMSxn9dsk8IaUbhA&s',
           title:'Television',
           desc:'Transform your viewing experience with our selection of TVs, crafted to deliver stunning visuals.',
-          link:'television'
+          link:'tv'
         }
     ]
   return (

@@ -12,6 +12,7 @@ import ItemComponent from './components/ItemComponent';
 import Cart from './components/Cart';
 import { ToastContainer } from 'react-toastify';
 import ContactUs from './components/ContactUs';
+import CategoryResult from './components/CategoryResult';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
         <Route path="/item/:id" element={<ItemComponent/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/contact' element={<ContactUs/>}/>
+        <Route path='/category/:categoryName' element={<CategoryResult/>}/>
       </Routes>
     </Router>
     </UserContext>

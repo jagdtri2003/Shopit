@@ -44,7 +44,7 @@ const ItemComponent = () => {
     <>
       <Header />
       <div className="breadcrumb">
-        <Link to="/">Home</Link> / <span>{item.name}</span>
+        <Link to="/">Home</Link> / <Link to={`/category/${item.category}`}>{item.category} </Link> / <span>{`Sku-${id}`}</span>
       </div>
       <div style={{ margin: "30px" }} className="item-container">
         <div className="item-image">
