@@ -37,15 +37,15 @@ const product = {
         discountPrice:1999,
         specifications:'The Air Tube Earphones Headset is a high-quality earphone that offers superior sound',
         brand:'Air Tube',
-        category:'earphone'
+        category:'Earphone'
     },
     1005:{
         id:1005,
-        image:'https://m.media-amazon.com/images/I/51hqXIAVXAL._SL1500_.jpg',
-        name:'Samsung Galaxy S23 Ultra 5G (Green, 12GB, 256GB Storage)',
-        price:86499,
-        discountPrice:149999,
-        specifications:'The Samsung Galaxy S23 Ultra 5G is a high-end Smartphone that offers a powerful processor, a large display, and a long-lasting battery. It also has a triple rear camera setup that allows you to take stunning photos and videos.',
+        image:'https://cdn.thewirecutter.com/wp-content/media/2023/10/smartphone-2048px-4861.jpg?auto=webp&quality=30&width=1024',
+        name:'Samsung Galaxy S21 FE 5G (Graphite, 8GB, 128GB Storage)',
+        price:29800,
+        discountPrice:69999,
+        specifications:'The Samsung Galaxy S21 FE 5G is a high-end Smartphone that offers a powerful processor, a large display, and a long-lasting battery. It also has a triple rear camera setup that allows you to take stunning photos and videos.',
         brand:'Samsung',
         category:'Smartphone'
     },
@@ -57,7 +57,7 @@ const product = {
         discountPrice: 55999,
         specifications:'The LG Inverter AC is a high-efficiency air conditioner that uses an inverter technology to maintain a consistent temperature in your room. It also has a self-diagnosis feature that helps you to identify and fix any issues with the AC.',
         brand:'LG',
-        category:'ac'
+        category:'AC'
     },
     1007:{
         id:1007,
@@ -306,7 +306,7 @@ const product = {
         price:789,
         discountPrice:2299,
         specifications:'This fabric keeps you cool during summers and warm during winters. The kurta is made from pure cotton, with a plain silhouette, which gives it that look. It\'s best for office wear, casual or night wear. This is a beautiful cotton kurta with a traditional print on it. This can be worn casually or as a party wear. The fabric is soft and comfortable to wear with all the new trends.',
-        brand:'Shopping Quenn',
+        brand:'Shopping Queen',
         category:"clothes"
     }
 }

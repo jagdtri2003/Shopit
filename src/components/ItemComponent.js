@@ -66,11 +66,13 @@ const ItemComponent = () => {
             <strong>Brand:</strong> {item.brand}
           </p>
           <div className="item-price">
-            <span className="price">₹ {item.price}</span>
-            {item.discountPrice && (
-              <span className="discount-price">₹ {item.discountPrice}</span>
-            )}
+          <span style={{color:'red',fontSize:'20px'}}>{- (((item.discountPrice-item.price)/item.discountPrice)*100).toFixed(2)}%  &nbsp;</span> 
+            <span className="price">
+              ₹{item.price} </span>
           </div>
+          <div style={{marginTop:'-8px',fontSize:'15px'}}>
+          M.R.P : ₹
+          <span className="discount-price">{item.discountPrice}</span></div>
           <div className="count-btn">
             <button onClick={() => (count > 1 ? setCount(count - 1) : null)}>
               -
