@@ -32,7 +32,12 @@ function Login() {
     e.preventDefault();
     // Handle form submission
     firebaseInstance.signIn( formData.email, formData.password ).catch((err)=>{
+      if(err.message.toLowerCase().includes('user-disabled')){
+        setError("Account Disabled! Contact Admin ")
+      }else{
         setError("Invalid Email ID or Password !");
+
+      }
     })
   };
 
