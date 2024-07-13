@@ -11,7 +11,7 @@ function CategoryResult() {
       window.scrollTo(0, 0);
     },[])
 
-    const [sortCriteria, setSortCriteria] = useState('none');
+    const [sortCriteria, setSortCriteria] = useState('None');
     const [sortedProducts, setSortedProducts] = useState([]);
 
     const { categoryName } = useParams();
@@ -20,9 +20,13 @@ function CategoryResult() {
 
       const products = Object.values(product).filter((product)=> product.category.toLowerCase() === categoryName.toLowerCase());
 
-      if (sortCriteria === 'Price') {
+      if (sortCriteria === 'Price: Low to High') {
         products.sort((a, b) => a.price - b.price);
-      } else if (sortCriteria === 'Name') {
+      }else if(sortCriteria === 'Price: High to Low'){ 
+        products.sort((a, b) => b.price - a.price);
+      }
+      
+      else if (sortCriteria === 'Name') {
         products.sort((a, b) => a.name.localeCompare(b.name));
       }
       setSortedProducts(products);
