@@ -1,10 +1,15 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useParams,Link } from 'react-router-dom';
 import product from '../products/products';
 import ProductCard from './ProductCard';
 import Header from './Header';
 
 function CategoryResult() {
+
+    useEffect(()=>{
+      window.scrollTo(0, 0);
+    },[])
+
     const { categoryName } = useParams();
     const products = Object.values(product).filter((product)=> product.category.toLowerCase() === categoryName.toLowerCase());
     console.log(products);
