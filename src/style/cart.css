@@ -114,7 +114,7 @@ tbody td:nth-child(2) {
 }
 
 .order-summary {
-  margin: 20px 10px ;
+  margin: 10px ;
 }
 
 .order-summary h2 {
@@ -196,5 +196,20 @@ tbody td:nth-child(2) {
 
   .order-summary {
     margin: 0 -10px  ;
+  }
+}
+
+
+@media (min-width:700px) {
+  .order-summary {
+    position:fixed; 
+    right: 2vw;
+  }
+}
+
+@media (min-width:800px) {
+  .order-summary {
+    position:fixed; 
+    right:8vw
   }
 }

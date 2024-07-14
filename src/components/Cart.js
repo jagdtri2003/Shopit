@@ -30,7 +30,7 @@ const CartItem = ({ item, onRemove }) => (
             <p>{item.quantity}</p>
           </td>
           <td>
-            <p>₹{(item.price * item.quantity).toFixed(2)}</p>
+            <p>₹{(item.price * item.quantity)}</p>
           </td>
         </tr>
       </tbody>

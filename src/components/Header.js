@@ -29,7 +29,7 @@ function Header({query}) {
       <nav className="navigation">
         <Link className='navigation-item' to="/account"><i title='Account' className="fa-duotone fa-user"></i></Link>
         <Link className='navigation-item' to="/cart">
-        <div className="cart-container">
+        <div className="cart-icon-container">
             <i title="Your Cart" className="fa-duotone fa-cart-shopping cart-icon"></i>
             <div className="cart-count" id="cart-count">{cart || 0}</div>
         </div>
