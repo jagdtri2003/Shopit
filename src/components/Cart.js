@@ -12,10 +12,13 @@ const CartItem = ({ item, onRemove }) => (
       <tbody>
         <tr>
           <td>
+          <Link  to={`/item/${item.id}`}>
             <img src={item.image} alt="" className="cart-item-image" />
+          </Link>
           </td>
+          
           <td>
-            <h4>{item.name}</h4>
+          <h4>{item.name}</h4>
             <p>
               Sku: {item.sku}
               <br />

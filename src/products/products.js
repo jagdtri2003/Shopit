@@ -308,6 +308,27 @@ const product = {
         specifications:'This fabric keeps you cool during summers and warm during winters. The kurta is made from pure cotton, with a plain silhouette, which gives it that look. It\'s best for office wear, casual or night wear. This is a beautiful cotton kurta with a traditional print on it. This can be worn casually or as a party wear. The fabric is soft and comfortable to wear with all the new trends.',
         brand:'Shopping Queen',
         category:"clothes"
+    },
+    1032:{
+        id:1032,
+        image:'https://m.media-amazon.com/images/I/81oS2scJ5GL._SL1500_.jpg',
+        name:'Noise Twist Go round dial Smartwatch with BT calling, 1.39" Display, Metal Build',
+        price:1599,
+        discountPrice:4999,
+        specifications:'The NoiseFit Twist Go is a budget-friendly smartwatch that offers a robust set of features for its price point.The smartwatch boasts a 1.39-inch HD TFT LCD screen with a 2.5D curved glass display. It has a metal build and includes a rotating crown for easy navigation. The design is stylish and versatile, available in multiple colors and strap options, including both silicone and metallic variants.',
+        brand:'Noise',
+        category:'Watch'
+    },
+    1033:{
+        id:1033,
+        image:'https://m.media-amazon.com/images/I/51l36TeIjfL._SY879_.jpg',
+        name:'Titan Karishma Analog Champagne Dial Women\'s Watch ',
+        price:1789,
+        discountPrice:1995,
+        specifications:'Elevate your elegance with the Titan Karishma Analog Women\'s Watch, a perfect blend of style and sophistication. This exquisite timepiece features a stunning champagne dial that adds a touch of luxury to your everyday look. The sleek and slim design, paired with the gleaming gold-tone stainless steel strap, makes it an ideal accessory for any occasion.',
+        brand:'Titan',
+        category:'Watch'
+
     }
 }
 
