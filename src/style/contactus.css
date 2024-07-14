@@ -1,5 +1,14 @@
+.contact-us-container{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 96vw;
+    height: 80vh;
+}
+
 .contact-us {
-    max-width: 600px;
+    flex: 1;
+    max-width: 570px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -35,8 +44,8 @@
 
 .contact-us button {
     padding: 10px;
-    background-color: #28a745;
-    color: white;
+    background-color: #ffb400;;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -44,5 +53,7 @@
 }
 
 .contact-us button:hover {
-    background-color: #218838;
+    background-color: #d59704;;
 }
+
+

@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import '../style/contactus.css';
+import Header from './Header';
+import Footer from './Footer';
 
 function ContactUs() {
 
@@ -28,9 +30,12 @@ function ContactUs() {
             subject: '',
             message: ''
         });
+        
     };
   return (
     <>
+        <Header/>
+        <div className="contact-us-container">
         <div className="contact-us">
             <h2>Contact Us</h2>
             <form onSubmit={handleSubmit}>
@@ -67,6 +72,7 @@ function ContactUs() {
                 <div>
                     <label>Message:</label>
                     <textarea
+                        rows={4}
                         name="message"
                         value={form.message}
                         onChange={handleChange}
@@ -76,6 +82,8 @@ function ContactUs() {
                 <button type="submit">Submit</button>
             </form>
         </div>
+        </div>
+        <Footer/>
     </>
   )
 }
