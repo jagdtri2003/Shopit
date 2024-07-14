@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import ContactUs from './components/ContactUs';
 import CategoryResult from './components/CategoryResult';
 import SearchResult from './components/SearchResult';
+import Page404 from './components/Page404';
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/category/:categoryName' element={<CategoryResult/>}/>
         <Route path='/search/:query' element={<SearchResult/>}/>
+        <Route path='*' element={<Page404/>}/>
       </Routes>
     </Router>
     </UserContext>
