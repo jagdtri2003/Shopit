@@ -54,13 +54,13 @@ function App() {
     <ToastContainer/>
     <Router>
       <Routes>
-        <Route path='/' element={user ? <Home/> : <Navigate to="/login"/>}></Route>
+        <Route path='/' element={<Home/>}></Route>
         <Route path='/about' element={<h1>About</h1>}></Route>
         <Route path='/login' element={!user ?<Login/>:<Navigate to='/'/>}></Route>
         <Route path='/signup' element={!user ? <Signup/> : <Navigate to='/'/>}></Route>
-        <Route path='/account' element={!user ? <Signup/> : <UserProfile user={user}/>}></Route>
+        <Route path='/account' element={!user ? <Login/> : <UserProfile user={user}/>}></Route>
         <Route path="/item/:id" element={<ItemComponent/>} />
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/cart' element={<Cart user={user}/>} />
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/category/:categoryName' element={<CategoryResult/>}/>
         <Route path='/search/:query' element={<SearchResult/>}/>

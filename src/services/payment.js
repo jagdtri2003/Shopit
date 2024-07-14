@@ -1,7 +1,7 @@
 import { failToast, successToast } from "../components/ToastComponent.js";
 import firebaseInstance from "../firebase/firebase.js";
 
-const handlePayment = (amount, cartItems, setCartItems) => () => {
+const handlePayment = (amount, cartItems, setCartItems) => {
   if (typeof window.Razorpay === "undefined") {
     alert("Razorpay SDK not loaded");
     return;

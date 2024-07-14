@@ -1,9 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import "../style/cart.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { CartContext } from "../context/CartContex";
 import { handlePayment } from "../services/payment";
+import { failToast } from "./ToastComponent";
+
 const CartItem = ({ item, onRemove }) => (
   <div className="cart-item">
     <table>
@@ -38,8 +40,10 @@ const CartItem = ({ item, onRemove }) => (
   </div>
 );
 
-const Cart = () => {
+const Cart = ({user}) => {
   const { cartItems, setCartItems } = useContext(CartContext);
+
+  const navigate = useNavigate();
 
   const [discount, setDiscount] = useState(null);
   const [promoCode, setPromoCode] = useState("");
@@ -71,6 +75,15 @@ const Cart = () => {
       setDiscount(totalAmount*0.2);
     }
   };
+
+  const handleCheckout = () =>{
+      if(!user){
+        failToast("Please login to continue");
+        navigate("/login");
+      }else{
+        handlePayment(discount ? (totalAmount*100)-(discount.toFixed(2)*100) : totalAmount * 100,cartItems,setCartItems)
+      }
+  }
 
   return (
     <>
@@ -121,7 +134,8 @@ const Cart = () => {
                   {discount && <p>Discount: ₹ {discount.toFixed(2)} ({promoCode})</p> }
                   <p>Total: ₹ {discount ? totalAmount.toFixed(2)-discount.toFixed(2) : totalAmount.toFixed(2)}</p> 
                   <p>(Inclusive of tax ₹ 0.00)</p>
-                  <button onClick={handlePayment(discount ? (totalAmount*100)-(discount.toFixed(2)*100) : totalAmount * 100,cartItems,setCartItems)} className="checkout-button">CHECKOUT</button>
+                  <button onClick={handleCheckout}
+                     className="checkout-button">CHECKOUT</button>
                 </div>
               </div>
             </div>
