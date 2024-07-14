@@ -3,7 +3,7 @@ import '../style/header.css';
 import { Link,useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContex';
 
-function Header() {
+function Header({query}) {
 
   const {cart} = useContext(CartContext);
   const [search,setSearch] = useState("");
