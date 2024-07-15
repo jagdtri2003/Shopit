@@ -3,7 +3,7 @@ import "../style/login.css";
 import googleImg from '../images/google.png';
 import { Link } from "react-router-dom";
 import firebaseInstance from "../firebase/firebase";
-import { updateProfile } from "firebase/auth";
+import { sendEmailVerification, updateProfile } from "firebase/auth";
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -38,6 +38,7 @@ function Signup() {
     }).then(async (userCredential)=>{
       const user = userCredential.user;
       await updateProfile(user,{displayName:formData.name});
+      sendEmailVerification(firebaseInstance.auth.currentUser);
     })
 
   };
