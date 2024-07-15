@@ -2,15 +2,17 @@ import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider, signOut, sendPasswordResetEmail, updatePassword, updateEmail, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, collection, doc, setDoc,getDocs, getDoc, updateDoc, orderBy, startAfter, limit, query, where } from "firebase/firestore";
 import { getStorage, ref, deleteObject } from "firebase/storage";
+import {getAnalytics,logEvent} from "firebase/analytics";
 import firebaseConfig from "./config";
 
 class Firebase {
   constructor() {
-    initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
 
     this.auth = getAuth();
     this.db = getFirestore();
     this.storage = getStorage();
+    this.analytics = getAnalytics(app);
   }
 
   // AUTH ACTIONS ------------
@@ -50,6 +52,9 @@ class Firebase {
     );
     return getDocs(q);
   };
+
+    // Log Event (Custom function for logging events)
+  logEvent = (eventName, eventParams) => logEvent(this.analytics, eventName, eventParams);
 
   passwordUpdate = (password) => updatePassword(this.auth.currentUser, password);
 

@@ -21,11 +21,13 @@ const handlePayment = (amount, cartItems, setCartItems) => {
       );
       firebaseInstance.saveOrderHistory({
         id: firebaseInstance.auth.currentUser.uid,
+        name:firebaseInstance.auth.currentUser.displayName,
         paymentId:response.razorpay_payment_id,
         items: [...cartItems],
         total:(amount/100).toFixed(2),
         date: new Date().toDateString()+" "+new Date().toLocaleTimeString(),
       });
+      firebaseInstance.logEvent("purchased_item",{items:[...cartItems]});
       setCartItems([]);
     },
     prefill: {
