@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import '../style/contactus.css';
 import Header from './Header';
 import Footer from './Footer';
+import { successToast } from './ToastComponent';
 
 function ContactUs() {
 
@@ -21,9 +22,21 @@ function ContactUs() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you can handle form submission, e.g., sending the data to an API or email
-        console.log('Form submitted:', form);
-        // Reset form fields after submission
+        fetch("https://api.web3forms.com/submit",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                access_key: "9faaa0f6-44fc-40e4-a0f0-b725df6c5b0d",
+                name: form.name,
+                email: form.email,
+                subject: form.subject,
+                message: form.message
+            })
+        });
+        successToast("Query Received !")
         setForm({
             name: '',
             email: '',
