@@ -20,6 +20,11 @@
   margin-bottom: 20px;
 }
 
+.profile-image-container{
+  position: relative;
+  display: inline-block; 
+}
+
 .profile-image {
   width: 100px;
   height: 100px;
@@ -27,6 +32,25 @@
   margin-right: 20px;
   object-fit: cover;
   border: 2px solid #ddd;
+  display: block;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-image-container:hover .edit-icon {
+  opacity: 1;
+  font-size:2rem;
+}
+.profile-image-container:hover .profile-image{
+  border-color: #00BCD4;
+  opacity: 0.3;
 }
 
 .user-details {

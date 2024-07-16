@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider, signOut, sendPasswordResetEmail, updatePassword, updateEmail, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, collection, doc, setDoc,getDocs, getDoc, updateDoc, orderBy, startAfter, limit, query, where } from "firebase/firestore";
-import { getStorage, ref, deleteObject } from "firebase/storage";
+import { getStorage, ref, deleteObject,getDownloadURL,uploadBytesResumable } from "firebase/storage";
 import {getAnalytics,logEvent} from "firebase/analytics";
 import firebaseConfig from "./config";
 
@@ -55,6 +55,27 @@ class Firebase {
 
     // Log Event (Custom function for logging events)
   logEvent = (eventName, eventParams) => logEvent(this.analytics, eventName, eventParams);
+
+  // Upload Profile Picture
+  uploadProfilePic = (file,uid) => {
+    const fileRef = ref(this.storage, `profilePictures/${uid}`);
+    return new Promise((resolve, reject) => {
+      const uploadTask = uploadBytesResumable(fileRef, file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => {
+          reject(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+            resolve(url);
+          });
+        }
+      );
+    });
+  };
+
 
   passwordUpdate = (password) => updatePassword(this.auth.currentUser, password);
 

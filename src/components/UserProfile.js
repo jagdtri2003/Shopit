@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import '../style/userprofile.css';
 import Header from './Header';
 import firebaseInstance from '../firebase/firebase.js';
+import { updateProfile } from 'firebase/auth';
 
 const UserProfile =  ({ user }) => {
 
@@ -21,18 +22,44 @@ const UserProfile =  ({ user }) => {
         localStorage.setItem('orders', JSON.stringify(firebaseOrders));
       }
     });
-  }, [user.uid]);
-  // user.orders=[
-  //   {id:1, date:'27/04/2024',total:'2400'}
-  // ]
+  }, [user.uid,user.photoURL]);
+
+  const updatePic = () => {
+    const fileInput = document.getElementById('upload-pic');
+    fileInput.click();
+  
+    fileInput.onchange = async () => {
+      const file = fileInput.files[0];
+      // console.log(photo);
+      try {
+        const url = await firebaseInstance.uploadProfilePic(file,user.uid);
+        // console.log(url);
+  
+        if (user) {
+          await updateProfile(user, { photoURL: url });
+          document.getElementById('profile-img').src=url;
+          console.log('Profile updated successfully');
+        } else {
+          console.error('No authenticated user');
+        }
+      } catch (error) {
+        console.error('Error uploading file and updating profile:', error);
+      }
+    };
+  };
+
   return (
     <>
     <Header/>
-    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'30px'}}>
+    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'30px',marginBottom:'30px'}}>
     <div className="user-profile">
       <h1>User Profile</h1>
       <div className="user-info">
-      <img src={user.profileImage?user.profileImage :`https://via.placeholder.com/300x200.png?text=${user.displayName.charAt(0)}`} alt="Profile" className="profile-image" />
+      <div className="profile-image-container">  
+      <img id="profile-img" src={user.photoURL?user.photoURL:`https://via.placeholder.com/300x200.png?text=${user.displayName.charAt(0)}`} alt="Profile" className="profile-image" />
+      <i onClick={updatePic} class="fa-duotone fa-user-pen edit-icon"></i>
+      <input id='upload-pic' type='file' hidden/>
+      </div>
       <div className="user-details">
       <h2>{user.displayName}  <i title='Logout' onClick={()=>{
         localStorage.setItem('cartItems',JSON.stringify([]));
