@@ -329,6 +329,16 @@ const product = {
         brand:'Titan',
         category:'Watch'
 
+    },
+    1034:{
+        id:1034,
+        image:'https://m.media-amazon.com/images/I/51CWi-GVY4L._SL1500_.jpg',
+        name:'Voltas 1 ton 3 Star Inverter Split AC (Copper, 4-in-1 Adjustable Mode, Anti-dust Filter, 2024 Model, 123V CAE, White)',
+        price:30990,
+        discountPrice:79000,
+        specifications:"Split AC with inverter compressor: Variable speed compressor which adjusts power depending on heat load. The adjustable feature with 4 cooling modes allows for flexible temperature control by operating in 4 different tonnages by adjusting cooling capacity (20% to 120%) to match different needs basis room size or occupancy, enhancing energy efficiency and providing personalized comfort with minimal effort.Capacity 1 ton: Suitable for small sized rooms ( up to 110 sq.ft); Cooling Capacity: 1650 - 3750 W; Ambient Temperature: 52 degree Celsius Energy Rating: 3 Star | Energy efficiency | Annual Energy Consumption (as per energy label): 672.93 kwh | ISEER Value: 3 Warranty: 1 Years on Product, 5 Years on PCB, 10 Years on Compressor with gas charging",
+        brand:'Voltas',
+        category:'AC'
     }
 }
 

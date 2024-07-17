@@ -15,7 +15,7 @@ const ItemComponent = () => {
 
   const { id } = useParams();
   const [count, setCount] = useState(1);
-  const { cartItems, addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const item = product[id];
 
@@ -39,7 +39,6 @@ const ItemComponent = () => {
       e.target.removeAttribute("disabled");
     }, 3000);
   };
-  console.log(cartItems);
   return (
     <>
       <Header />

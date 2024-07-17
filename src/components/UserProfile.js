@@ -51,7 +51,7 @@ const UserProfile =  ({ user }) => {
   return (
     <>
     <Header/>
-    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'30px',marginBottom:'30px'}}>
+    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'30px',paddingBottom:'30px'}}>
     <div className="user-profile">
       <h1>User Profile</h1>
       <div className="user-info">
@@ -65,7 +65,7 @@ const UserProfile =  ({ user }) => {
         localStorage.setItem('cartItems',JSON.stringify([]));
         firebaseInstance.signOut();
       }} style={{color:'red',cursor:'pointer'}} className="fa-solid fa-right-from-bracket"></i></h2>
-      <p>Email: {user.email}</p>
+      <p>Email: {user.email} {  !user.emailVerified && (<i title='Email not Verified !' style={{color:'red'}} class="fa-regular fa-circle-exclamation"></i>)} </p>
       </div>
       </div>
       <div className="order-history">
