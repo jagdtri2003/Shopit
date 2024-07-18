@@ -10,6 +10,7 @@ function Login() {
     password: ""
   });
   const [error, setError] = useState(null);
+  const [msg,setMsg] = useState(null);
 
   const handleGoogleSignIn = () => {
     firebaseInstance.signInWithGoogle().then((result) => {
@@ -22,6 +23,7 @@ function Login() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setError(null);
+    setMsg(null);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value
@@ -41,6 +43,19 @@ function Login() {
     })
   };
 
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+    if(!formData.email){ 
+      setError("Please Enter Email ID");
+      return;
+    } 
+    firebaseInstance.passwordReset(formData.email).then(() => {
+      setMsg("Password reset email sent. Check your inbox.");
+    }).catch((error) => {
+      console.error(error);
+    });
+
+  }
   return (
     <div className="container">
     <div className="login-container">
@@ -75,11 +90,12 @@ function Login() {
               onChange={handleChange}
               required
             />
-            <a href="#" className="forgot-password">
+            <a style={{ cursor: "pointer" }} onClick={handleForgotPassword} className="forgot-password">
               Forgot Password?
             </a>
           </div>
           {error && <div className="error-message">{error}</div>}
+          {msg && <div className="msg-message">{msg}</div>}
           <button type="submit" className="sign-in-btn">
             SIGN IN
           </button>

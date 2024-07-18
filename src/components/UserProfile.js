@@ -22,7 +22,7 @@ const UserProfile =  ({ user }) => {
         localStorage.setItem('orders', JSON.stringify(firebaseOrders));
       }
     });
-  }, [user.uid,user.photoURL]);
+  }, [user.uid]);
 
   const updatePic = () => {
     const fileInput = document.getElementById('upload-pic');
