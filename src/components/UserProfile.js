@@ -58,7 +58,7 @@ const UserProfile =  ({ user }) => {
       <div className="profile-image-container">  
       <img id="profile-img" src={user.photoURL?user.photoURL:`https://via.placeholder.com/300x200.png?text=${user.displayName.charAt(0)}`} alt="Profile" className="profile-image" />
       <i onClick={updatePic} class="fa-duotone fa-user-pen edit-icon"></i>
-      <input id='upload-pic' type='file' hidden/>
+      <input id='upload-pic' type='file' accept="image/*" hidden/>
       </div>
       <div className="user-details">
       <h2>{user.displayName}  <i title='Logout' onClick={()=>{
