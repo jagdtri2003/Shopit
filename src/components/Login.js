@@ -3,6 +3,7 @@ import "../style/login.css";
 import {  Link } from "react-router-dom";
 import firebaseInstance from "../firebase/firebase";
 import googleImg from "../images/google.png";
+import ReCAPTCHA from "react-google-recaptcha"
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -96,6 +97,8 @@ function Login() {
           </div>
           {error && <div className="error-message">{error}</div>}
           {msg && <div className="msg-message">{msg}</div>}
+          {<ReCAPTCHA sitekey="6Lc2OhUqAAAAAGLJiFb4UZ-vO4S3lgCy7pIvu31i"/>}
+          <br/>
           <button type="submit" className="sign-in-btn">
             SIGN IN
           </button>
