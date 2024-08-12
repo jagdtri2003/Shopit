@@ -27,6 +27,7 @@ const failToast = (msg)=>{
         theme: "light",
         transition: Bounce,
     })
-};
+};    
+
 
 export {successToast,failToast};

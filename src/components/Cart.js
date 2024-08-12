@@ -18,11 +18,11 @@ const CartItem = ({ item, onRemove }) => (
           </td>
           
           <td>
-          <h4>{item.name}</h4>
+          <h4>{item.name.length > 60 ? item.name.substring(0, 60) + "..." : item.name}</h4>
             <p>
               Sku: {item.sku}
               <br />
-              Brand: {item.brand}
+              Added on : {item.added}
             </p>
             <button className="remove-button" onClick={() => onRemove(item.id)}>
               Remove

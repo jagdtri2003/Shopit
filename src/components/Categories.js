@@ -54,12 +54,12 @@ function Categories() {
       <div className="product-carousel">
         {featuredList.map((item, index) => (
             <div className="product-card" key={index}>
-              <Link to={`/category/${item.link}`}>
+              <Link to={`/search/?q=${item.link.toLowerCase()}`}>
                 <img style={{objectFit:'cover'}} loading='lazy' src={item.img} alt="" />
                 </Link>
                 <h4 className='cat-name'>{item.title}</h4>
                 <div>{item.desc}</div>
-                <Link to={`/category/${item.link}`}>
+                <Link to={`/search/?q=${item.link.toLowerCase()}`}>
                 <button className='shop-now'>SHOP NOW </button>
                 </Link>
             </div>

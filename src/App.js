@@ -63,7 +63,7 @@ function App() {
         <Route path='/cart' element={<Cart user={user}/>} />
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/category/:categoryName' element={<CategoryResult/>}/>
-        <Route path='/search/:query' element={<SearchResult/>}/>
+        <Route path='/search' element={<SearchResult/>}/>
         <Route path='*' element={<Page404/>}/>
       </Routes>
     </Router>

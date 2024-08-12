@@ -1,20 +1,26 @@
-import React,{useContext,useState} from 'react';
+import React,{useContext,useEffect,useState} from 'react';
 import '../style/header.css';
 import { Link,useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContex';
 import firebaseInstance from '../firebase/firebase';
 
-function Header() {
+function Header({query}) {
 
   const {cart} = useContext(CartContext);
   const [search,setSearch] = useState("");
+
+  useEffect(()=>{
+    if (query){
+      setSearch(query);
+    }
+  },[query])
 
   const navigate = useNavigate();
 
   const handleSubmit = () =>{
     if (search.trim()){
       firebaseInstance.logEvent('search',{search_term:search});
-      navigate(`/search/${search}`);
+      navigate(`/search/?q=${search.toLowerCase()}`);
     }
   }
   const handleKeyDown = (e) =>{

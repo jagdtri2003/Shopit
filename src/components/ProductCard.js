@@ -8,25 +8,23 @@ import { successToast } from './ToastComponent';
 function ProductCard({product}) {
 
   const {addToCart} = useContext(CartContext);
-  const [starRating, setStarRating] = useState(4);
   const [limitedTimeDeal, setLimitedTimeDeal] = useState(false);
 
   useEffect(() => {
-    setStarRating(4 + Math.random());
     setLimitedTimeDeal(Math.random() > 0.5);
   }, []);
 
   const handleAddToCart = (item) => {
     addToCart(
-      item.id,
+      item.asin,
       {
-        id:item.id,
-        name: item.name,
+        id:item.asin,
+        name: item.name || item.product_title,
         quantity: 1,
-        sku: `Sku-${item.id}`,
-        brand: item.brand,
-        price: item.price,
-        image: item.image,
+        added : new Date().toString().slice(0,15),
+        sku: `Sku-${item.asin}`,
+        price: parseInt(item.price.replaceAll(',', '')) || item.product_price,
+        image: item.image || item.product_photo,
       },1);
     successToast("Item Added to Cart !!");
   };
@@ -35,30 +33,33 @@ function ProductCard({product}) {
   return (
     <>
     <div className="product-card2">
-      <div className="product-image">
-        <img src={product.image} alt={product.name} />
+      <div style={{paddingLeft:'5%'}} className="product-image">
+        <img loading='lazy' src={product.image || product.product_photo} alt={product.name} />
       </div>
       <div className="product-details">
-        <Link to={`/item/${product.id}`} className="product-name">{product.name}</Link>
+        <Link to={`/item/${product.id || product.asin}`} className="product-name">{product.name || product.product_title}</Link>
         <div className="product-rating">
           <span>
           <StarRatings
-            rating={starRating}
+            rating={parseFloat(product.rating)}
             starRatedColor="orange"
             starDimension="20px"
             starSpacing="5px"
-          />
+          /> { product.reviews !=='N/A' ? `(${product.reviews} ratings)` : ''}
           </span>
           <br/><br/>
-          <strong>SKU :</strong> Sku-{product.id}
+          <strong>SKU :</strong> Sku-{product.id || product.asin}
           <br/>
-          <strong>Brand:</strong> {product.brand}
+          {product.deliveryText !=="N/A" && <div><strong>FREE DELIVERY</strong> {product.deliveryText}</div>}
+          {product.numberOfSales !=="N/A" && <div>{product.numberOfSales} bought in past month</div>}
         </div>
-        {limitedTimeDeal && <span className="product-deal">Limited time deal</span>}
+        {limitedTimeDeal && product.price !== 'N/A' && <span className="product-deal">Limited time deal</span>}
         <div className="product-price">
-          <span className="current-price">₹{product.price}</span>
-          <span className="original-price">M.R.P: ₹{product.discountPrice}</span>
-          <span className="discount">{(((product.discountPrice-product.price)/product.discountPrice)*100).toFixed(2)}% off</span>
+          { product.price !== 'N/A' ? <span className="current-price">₹{product.price}</span> : <div style={{color:'red'}}>
+            Currently Out of Stock
+          </div> }
+          { product.discountPrice !== 'N/A' && <span className="original-price">M.R.P: {product.discountPrice }</span> }
+          { product.discountPrice !== 'N/A' && <span className="discount">{((parseInt(product.discountPrice.slice(1).replace(/,/g, ''))-parseInt(product.price.replace(/,/g, '')))/(parseInt(product.discountPrice.slice(1).replace(/,/g, '')))*100).toFixed(0)}% off</span> } 
         </div>
         <button onClick={(e)=>{
               handleAddToCart(product)

@@ -23,10 +23,10 @@ const Footer = () => {
                 <div className="footer-section">
                     <h4>Follow Us</h4>
                     <div className="social-icons">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/jagdamba-tripathi/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/jagdamba-tripathi/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div className="footer-section">
