@@ -12,6 +12,7 @@ import { setItemTillMidnight, getItemWithExpiry } from "../util/localStorage";
 
 function SearchResult() {
 
+
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
