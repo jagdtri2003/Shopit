@@ -102,7 +102,7 @@ function SearchResult() {
               value={sortCriteria}
               onChange={handleSortChange}
             >
-              <option>None</option>
+              <option>Relevance</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
               <option>Name</option>
@@ -116,13 +116,14 @@ function SearchResult() {
               .map((_, index) => (
                 <div key={index} className="product-card2">
                   <div className="product-image">
-                    <Skeleton height={200} />
+                    <Skeleton style={{minWidth:'200px'}} height={200} />
                   </div>
                   <div className="product-details">
                     <Skeleton
                       style={{ marginBottom: "12px" }}
                       height={30}
                       count={4}
+                      className="skeleton-details"
                     />
                   </div>
                 </div>
