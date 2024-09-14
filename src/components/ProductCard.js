@@ -21,7 +21,7 @@ function ProductCard({product}) {
         id:item.asin,
         name: item.name || item.product_title,
         quantity: 1,
-        added : new Date().toString().slice(0,15),
+        added : new Date().toString().slice(4,15),
         sku: `Sku-${item.asin}`,
         price: parseInt(item.price.replaceAll(',', '')) || item.product_price,
         image: item.image || item.product_photo,

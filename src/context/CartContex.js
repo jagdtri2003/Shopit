@@ -27,7 +27,7 @@ const CartProvider = ({children}) =>{
             setCart((prevCount) => prevCount + 1);
             return [
               ...prevCartItems,
-              { id, name: item.name, quantity: count, price: item.price, image: item.image, sku:`Sku-${id}`,brand:item.brand},
+              { id, name: item.name, quantity: count, price: item.price, image: item.image, sku:`Sku-${id}`,brand:item.brand,added:item.added},
             ];
           }
         });
