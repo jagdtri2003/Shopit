@@ -84,6 +84,19 @@ function SearchResult() {
     setSortCriteria(e.target.value);
   };
 
+  function updateLinkText() {
+    if (window.innerWidth <= 650) { // Change the width based on the screen size you want
+      document.querySelector('.prev-item a').textContent = '<';
+      document.querySelector('.next-item a').textContent = '>';
+    } else {
+      document.querySelector('.prev-item a').textContent = '< Previous';
+      document.querySelector('.next-item a').textContent = 'Next >';
+    }
+  }
+  updateLinkText();
+  // Add an event listener to handle window resize
+  window.addEventListener('resize', updateLinkText);
+
   return (
     <>
       <Header query={query} />
