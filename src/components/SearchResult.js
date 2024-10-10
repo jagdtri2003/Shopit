@@ -85,16 +85,12 @@ function SearchResult() {
   };
 
   function updateLinkText() {
-    try{
-      if (window.innerWidth <= 650) {
-        document.querySelector('.prev-item a').textContent = '<';
-        document.querySelector('.next-item a').textContent = '>';
-      } else {
-        document.querySelector('.prev-item a').textContent = '< Previous';
-        document.querySelector('.next-item a').textContent = 'Next >';
-      }
-    }catch(err){
-      console.log(err);
+    if (window.innerWidth <= 650) { // Change the width based on the screen size you want
+      document.querySelector('.prev-item a').textContent = '<';
+      document.querySelector('.next-item a').textContent = '>';
+    } else {
+      document.querySelector('.prev-item a').textContent = '< Previous';
+      document.querySelector('.next-item a').textContent = 'Next >';
     }
   }
   updateLinkText();

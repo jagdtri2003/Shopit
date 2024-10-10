@@ -15,7 +15,6 @@ import ContactUs from './components/ContactUs';
 import CategoryResult from './components/CategoryResult';
 import SearchResult from './components/SearchResult';
 import Page404 from './components/Page404';
-import AdminPanel from './components/Admin/AdminPanel';
 
 
 function App() {
@@ -65,7 +64,6 @@ function App() {
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/category/:categoryName' element={<CategoryResult/>}/>
         <Route path='/search' element={<SearchResult/>}/>
-        <Route path='/admin' element={<AdminPanel/>}/>
         <Route path='*' element={<Page404/>}/>
       </Routes>
     </Router>

@@ -31,7 +31,7 @@ function Header({query}) {
 
   return (
     <header className="header">
-      <Link to='/' className="logo">Grolife</Link>
+      <Link to='/' className="logo">Shop it</Link>
       <input value={search} onChange={(e)=>setSearch(e.target.value)} type="text" className="search-bar" placeholder="Search for products..." onKeyDown={handleKeyDown}/>
       <span style={{cursor:'pointer'}} onClick={handleSubmit} className='search-logo' ><i className="fa-solid fa-magnifying-glass"></i></span> 
       <nav className="navigation">
