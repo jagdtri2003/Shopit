@@ -17,14 +17,62 @@ class Firebase {
 
   // AUTH ACTIONS ------------
 
-  createAccount = (email, password) =>
-    createUserWithEmailAndPassword(this.auth, email, password);
+  // createAccount = (email, password) =>
+  //   createUserWithEmailAndPassword(this.auth, email, password);
+
+  createAccount = async (email, password) => {
+    try {
+      // Step 1: Create user with email and password
+      const userCredential = await createUserWithEmailAndPassword(this.auth, email, password);
+      const user = userCredential.user;
+
+      // Step 2: Add user details to Firestore
+      await setDoc(doc(this.db, 'users', user.uid), {
+        email: user.email,
+        address: '',
+        role: 'user', // Default role: user
+        phoneNumber: '',
+        createdAt: new Date(),
+      });
+
+      console.log('User signed up and document created in Firestore');
+    } catch (error) {
+      console.error('Error creating account:', error.message);
+      throw error;
+    }
+  };  
 
   signIn = (email, password) =>
     signInWithEmailAndPassword(this.auth, email, password);
 
-  signInWithGoogle = () =>
-    signInWithPopup(this.auth, new GoogleAuthProvider());
+  signInWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const userCredential = await signInWithPopup(this.auth, provider);
+      const user = userCredential.user;
+
+      // Check if the user already has a document in Firestore
+      const userDocRef = doc(this.db, 'users', user.uid);
+      const userDocSnapshot = await getDoc(userDocRef);
+
+      // If user does not exist in Firestore, create a new document
+      if (!userDocSnapshot.exists()) {
+        await setDoc(userDocRef, {
+          email: user.email,
+          address: '',
+          role:'user', // Default role: user
+          phoneNumber:'',
+          createdAt: new Date(),
+        });
+        console.log('User signed in with Google and Firestore document created');
+      } else {
+        console.log('User already exists in Firestore');
+      }
+    } catch (error) {
+      console.error('Error signing in with Google:', error.message);
+      throw error;
+    }
+  };  
 
   signInWithFacebook = () =>
     signInWithPopup(this.auth, new FacebookAuthProvider());
