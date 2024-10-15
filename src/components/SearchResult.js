@@ -85,12 +85,15 @@ function SearchResult() {
   };
 
   function updateLinkText() {
-    if (window.innerWidth <= 650) { // Change the width based on the screen size you want
-      document.querySelector('.prev-item a').textContent = '<';
-      document.querySelector('.next-item a').textContent = '>';
+    const prevLink = document.querySelector('.prev-item a');
+    const nextLink = document.querySelector('.next-item a');
+    
+    if (window.innerWidth <= 650) {
+      if (prevLink) prevLink.textContent = '<';
+      if (nextLink) nextLink.textContent = '>';
     } else {
-      document.querySelector('.prev-item a').textContent = '< Previous';
-      document.querySelector('.next-item a').textContent = 'Next >';
+      if (prevLink) prevLink.textContent = '< Previous';
+      if (nextLink) nextLink.textContent = 'Next >';
     }
   }
   updateLinkText();
